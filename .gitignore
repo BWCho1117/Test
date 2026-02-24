@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Data / binaries (avoid committing large files)
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.mat
+*.spe
+*.tif
+*.tiff
+
+# Figures / outputs
+*.png
+*.jpg
+*.jpeg
+*.pdf
+outputs/
+**/outputs/
+**/figures/
+**/results/
