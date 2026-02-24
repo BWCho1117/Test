@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "voltage-sweep-gui"
+version = "0.1.0"
+description = "A GUI application for selecting and analyzing voltage sweep data."
+authors = ["Your Name <youremail@example.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+h5py = "^3.1.0"
+numpy = "^1.21.0"
+matplotlib = "^3.4.0"
+tkinter = { version = "*", optional = true }
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
