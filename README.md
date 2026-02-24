@@ -1,4 +1,54 @@
 # DipolarIX_WS2-WSe2
+
+Fitting and analysis codes for measured PL and DR spectra of WS2/WSe2
+
+This repository is organized into two main parts:  
+(1) Visualizing/fitting PL/DR spectra to extract exciton energies/linewidths, and  
+(2) Analyzing the extracted parameters to understand excitonic properties of the WS2/WSe2 heterostructure.
+
+## Code Description
+
+### 1. gate_sweep_full.py
+**Description:**  
+Loads spectrum data from .spe files and visualizes a 2D colormap based on gate X, Y coordinates.  
+**Main features:**  
+- Click on a specific position to plot the corresponding spectrum (Intensity vs. energy)
+- Visualize linecuts (stack/map) from selected regions
+
+### 2. gate_sweep_ratio.py
+**Description:**  
+Loads doping/e-field sweep data from hdf5 files for various visualization and analysis methods.  
+**Main features:**  
+- Automatically generates maps of intensity (linear/log), 1st/2nd derivatives (dR/dE, dR/dV, d²R/dE², d²R/dV²)
+- Click on any map to instantly plot the spectrum at that voltage
+- Zero-crossing (edge) detection, guideline/filling line overlay, and CSV export
+
+### 3. polarization_calculation.py
+**Description:**  
+Loads PL spectra, wavelength, HWP angle, and magnetic field data from .hdf5 files to calculate and visualize valley polarization maps.  
+**Main features:**  
+- Background signal removal and cosmic ray (noise) filtering
+- Wavelength-to-energy conversion and spectrum smoothing
+- Grouping by HWP angle and alignment by magnetic field
+- 2D map plotting for each group
+- Valley polarization calculation and map visualization
+- Copy all plots as PNG to clipboard
+
+### 4. polarization_magnetic_field.py
+**Description:**  
+A GUI-based analysis tool for quickly visualizing magnetic field (B) sweep PL spectrum data.  
+**Main features:**  
+- File selection GUI
+- X-axis mode selection (energy or wavelength)
+- Visualization mode selection (Map/imshow or Stack)
+- Automatic data loading/sorting and baseline removal
+- Instant plotting in the selected mode (Map: B vs energy/wavelength, Stack: overlay spectra at multiple B with offsets)
+
+## Example Folder Structure
+
+---
+
+# DipolarIX_WS2-WSe2
 Fitting and analysis codes for measured PL and DR spectra of WS2/WSe2
 
 This repository is organized into two main parts:
@@ -51,6 +101,3 @@ x축 모드 선택(에너지 또는 파장)
 선택한 방식대로 즉시 플롯(Map: B vs energy/wavelength, Stack: 여러 B에서 스펙트럼을 offset으로 쌓아 그림)
 
 ## 폴더 구조 예시
-
-
-
