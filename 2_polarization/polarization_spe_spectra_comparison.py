@@ -218,7 +218,6 @@ def plot_stacked_by_B(file_map, B_list, angle_list, xlim=None, ylim=None, normal
             ax.plot(E, I, linewidth=1.5, label=legend_name)
 
         ax.set_ylabel("Norm. Intensity" if normalize else "Intensity (a.u.)")
-        ax.set_title(f"Target B = {B:g} T")
         ax.legend(loc="best", fontsize=9)
         ax.grid(True, alpha=0.25)
         if ylim is not None:
@@ -252,10 +251,10 @@ if __name__ == "__main__":
     # 폴더 선택
     data_dir = pick_folder()
 
-    filling = "0"                       # v0
+    filling = "-1"                       # v0
     B_list = [-6, -3, 0, 3, 6]          # 보고 싶은 field만
     angle_list = [95, 140]              # 보고 싶은 angle만
-    exp_s = 40                          # (선택) exposure 필터. 필요 없으면 None
+    exp_s = 30                          # (선택) exposure 필터. 필요 없으면 None
 
     # cosmic ray 제거 threshold/window 직접 설정
     cosmic_threshold = 10                # 원하는 값으로 조정 (낮추면 더 민감)
@@ -267,10 +266,8 @@ if __name__ == "__main__":
         files,
         B_list=B_list,
         angle_list=angle_list,
-        xlim=(1.43, 1.47),
+        xlim=(1.39, 1.43),
         ylim=(0, 1.05),
-        normalize=True,
-        title_prefix=f"v{filling}, exp={exp_s}s (LP/CP angle overlay)",
         background=600,
         cosmic_threshold=cosmic_threshold,
         cosmic_window=cosmic_window
