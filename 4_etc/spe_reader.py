@@ -49,7 +49,7 @@ def main():
         I = I - background
         I[I < 0] = 0
         if idx == 0:  # 첫 번째 파일만 intensity 2배
-            I = I * 1
+            I = I * 2
         plt.plot(E, I, label=Path(file_path).name + (" (x2)" if idx == 0 else ""))
     plt.xlabel("Energy (eV)")
     plt.ylabel("Intensity (a.u.)")
